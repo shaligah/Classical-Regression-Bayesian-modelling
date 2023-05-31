@@ -74,7 +74,7 @@ print(b.summary())
 #predicting the results using the test set
 test1 = test.copy()
 test1.drop(columns=['DATE','revenue'], inplace=True)
-b.predict(sma.add_constant(test1))
+predicted = b.predict(sma.add_constant(test1))
 
 #evaluating the model
 rmse(test['revenue'],b.predict(sma.add_constant(test1)))
